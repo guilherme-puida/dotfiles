@@ -8,6 +8,9 @@ call plug#begin()
 
     " Editing
     Plug 'tpope/vim-commentary'
+
+    " Vim gutter
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 colorscheme sobrio
@@ -16,6 +19,7 @@ set nocompatible
 filetype plugin indent on
 
 set ttyfast
+set updatetime=100
 
 set number relativenumber
 set background=dark
