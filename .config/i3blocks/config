@@ -1,0 +1,42 @@
+align=center
+separator=false
+color=#f8f8f8
+markup=pango
+separator_block_width=15
+
+[battery]
+interval=2
+color=#ff5555
+border=#ff5555
+
+[wifi]
+command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
+instance=wlp11s0f3u1
+interval=5
+label=<span color="#ff79c6"> </span>
+border=#ff79c6
+border_top=1
+border_right=0
+border_bottom=0
+border_left=0
+
+[arch_update]
+command=checkupdates | wc -l
+interval=3600
+label=<span color="#1793d1">  </span>
+border=#1793d1
+border_top=1
+border_right=0
+border_bottom=0
+border_left=0
+
+[clock]
+command=date +"%a, %d/%m/%y %H:%M:%S"
+interval=1
+label=<span color="#8be9fd"> </span>
+border=#8be9fd
+border_top=1
+border_right=0
+border_bottom=0
+border_left=0
+
