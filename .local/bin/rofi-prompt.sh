@@ -31,6 +31,7 @@ chosen=$(printf '%s;%s\n' "$yes" "$no" \
            -sep ';' \
            -a 0 \
            -u 1 \
+           -l 2 \
            -selected-row 1)
 
 case "$chosen" in
