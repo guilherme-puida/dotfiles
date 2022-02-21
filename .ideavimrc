@@ -1,0 +1,130 @@
+" Plugins
+set surround
+set commentary
+set highlightedyank
+set NERDTree
+
+"""""""" Options
+set ignorecase smartcase
+set showmode
+set undolevels=1000
+set history=1000
+
+"" Hybrid line numbers
+set number relativenumber
+
+set hlsearch
+set ideajoin
+set visualbell
+set scrolloff=5 sidescrolloff=10
+set incsearch
+
+let g:highlightedyank_highlight_duration="300"
+
+" Map <leader> to SPACE
+let mapleader=" "
+
+map Q gq
+
+"" Distraction free mode
+nnoremap <c-]> :action ToggleDistractionFreeMode<CR>
+nnoremap <c-[> :action ToggleZenMode<CR>
+
+"" Easy system clipboard
+noremap <leader>y "*y
+noremap <leader>Y "*Y
+noremap <leader>p "*p
+noremap <leader>P "*P
+
+"" Clear highlight
+nnoremap <silent> <CR> :noh<CR><CR>
+
+"" Editing ideavimrc
+nnoremap <silent> <leader>ce :e C:/Users/guilherme.moreira/.ideavimrc<CR>
+nnoremap <silent> <leader>cs :source C:/Users/guilherme.moreira/.ideavimrc<CR>
+nnoremap <silent> <leader>ss :w<CR>
+
+"" Indenting in visual mode
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+nmap <leader>[ <Action>(MethodUp)
+nmap <leader>] <Action>(MethodDown)
+
+nmap <leader>cow <Action>(EditorToggleUseSoftwraps)
+nmap <leader>col <Action>(EditorToggleShowWhitespace)
+
+"""""""" Navigation
+nmap <leader>wsh <Action>(SplitHorizontally)
+nmap <leader>wsv <Action>(SplitVertically)
+nmap <leader>wsu <Action>(Unsplit)
+nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+"" Open new window with current file.
+nmap <leader>wen <Action>(EditSourceInNewWindow)
+
+nmap <leader>wn <Action>(NextWindow)
+nmap <leader>wp <Action>(JumpToLastWindow)
+nmap <leader>wa <Action>(HideAllWindows)
+
+"" Moving between windows
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wl <c-w>l
+nnoremap <leader>wh <c-w>h
+
+nmap <leader>q <Action>(CloseContent)
+nmap <leader>Q <Action>(CloseAllEditors)
+
+nmap <TAB> <Action>(NextTab)
+nmap <s-TAB> <Action>(PreviousTab)
+
+nmap <leader>e <Action>(GotoFile)
+nmap <leader>a <Action>(FindInPath)
+nmap <leader>i <Action>(SearchEverywhere)
+
+
+""" nnoremap <leader>oc :NERDTreeClose<CR>
+nnoremap <leader>\\ :NERDTreeFocus<CR>
+nnoremap <leader>\] :NERDTreeClose<CR>
+
+"""" General binds
+nmap gu <Action>(ShowUsages)
+nmap gi <Action>(GotoImplementation)
+nmap gd <Action>(GotoDeclaration)
+nmap gs <Action>(GotoSuperMethod)
+nmap gc <Action>(GotoClass)
+nmap <leader>ge <Action>(GotoNextError)
+nmap <leader>gE <Action>(GotoPreviousError)
+nmap <leader>gf <Action>(Forward)
+nmap <leader>gb <Action>(Back)
+
+nmap <leader>xe <Action>(ShowErrorDescription)
+nmap <leader>xd <Action>(QuickJavaDoc)
+nmap <leader>xq <Action>(QuickImplementations)
+nmap <leader>xt <Action>(QuickTypeDefinition)
+
+nmap zc <Action>(CollapseRegion)
+nmap zo <Action>(ExpandRegion)
+nmap <leader>zc <Action>(CollapseAllRegions)
+nmap <leader>zo <Action>(ExpandAllRegions)
+
+nmap <leader>fp <Action>(FileStructurePopup)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fs <Action>(Switcher)
+nmap <leader>fl <Action>(RecentLocations)
+nmap <leader>fh <Action>(LocalHistory.ShowHistory)
+
+nmap <leader>rr <Action>(RenameElement)
+nmap <leader>ri <Action>(Inline)
+nmap <leader>rev <Action>(IntroduceVariable)
+vmap <leader>rev <Action>(IntroduceVariable)
+nmap <leader>rf <Action>(ReformatCode)
+nmap <leader>ro <Action>(OptimizeImports)
+nmap <leader>rg <Action>(Generate)
+
+nmap <leader>k <Action>(HighlightUsagesInFile)
+
+nmap <leader>;; <Action>(Run)
+nmap <leader>;. <Action>(Debug)
